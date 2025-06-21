@@ -1,0 +1,23 @@
+\section{Y-Chart}
+Y-Chart, developed in 1983, also known as the Gajski-Y-Chart, is a design methodology that provides a framework for the design of complex systems, particularly in the context of hardware and software co-design. According to~\cite{Gajski.2009}, the Y-Chart approach is characterized by its three main components or axes: behavior (functionality/specification), design structure (netlist/block diagram), and physical design (layout/board design). These components are represented in a Y-shaped diagram, where each arm of the Y represents a different aspect of the design process.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Screenshot 2025-06-19 202509.png}
+    \caption{Y-Chart approach~\cite{Gajski.2009}.}
+    \label{fig:Y-Chart}
+\end{figure}
+The Y-Chart in figure~\ref{fig:Y-Chart} comprises three axes, each representing a different aspect of every design process~\cite{Gajski.2009}. The axes are as follows:
+\begin{itemize}
+        \item \textbf{Behavior}: ``What'' the system should perform
+        \item \textbf{Structure}:  ``How'' the system is organized
+        \item \textbf{Layout}: ``Where'' the system is implemented
+\end{itemize}
+The concentrated circles around the origin of the Y-Chart represent design on different abstraction levels and the name of the each abstraction level originates from the types of the components generated on that abstraction level~\cite{Gajski.2009}. The four levels of abstraction are as following:
+\begin{itemize}
+    \item \textbf{Circuit level}: The components generated in this level are basic building blocks of the circuit i.e., N-type or P-type transistors.
+    \item \textbf{Logic level}: This level utilizes logic gates and flip-flops to generate register-transfer components e.g., registers, register files and also functional units such as ALUs and multipliers~\cite{Gajski.2009}.
+    \item \textbf{Processor level}: At this level, standard and custom processors along with special-hardware components e.g., memory controllers, arbiters, bridges, routers, and various interface components are generated~\cite{Gajski.2009}.
+    \item \textbf{System level}: At this level, embedded systems are designed using processors, memories, buses and other processor components~\cite{Gajski.2009}, generated on the lower levels.
+\end{itemize}
+The process of implementing a given behavior into a virtual structure on each abstraction level is known as synthesis. Each abstraction level should also contain a database of components that are comprising the structure. After synthesizing at one level, one can move to next lower abstraction level~\cite{Gajski.2009} and synthesize the structure further. However, if there is predefined library of components available with their structures and physical dimensions, one can proceed with the physical designing that consists of floorplanning, placement and routing on the chip or PC board~\cite{Gajski.2009}. Because of the modern day advancement in available software tools, it is possilbe to start designing or synthesizing directly from the system and processor levels without considering the lower levels. As stated in~\cite{Gajski.2009}, ``every system component except standard processors and memories is synthesized to the logic level, before the physical design is performed on the logic level''. This means that all custom components (e.g., controllers, accelerators etc.) except few are readily available to synthesize to the next lower level of abstraction that is logic level in the next step. These exceptional components- processors and memories are reused directly as IPs. In this regard, it is mentioned in~\cite{Gajski.2009} that ``some components on the processor-and-system levels may be obtained as IPs and not synthesized. Therefore, their structure and physical design are known, at least partially, on the level higher than logic level. In that case, the physical design then may contain components of different sizes and from different levels of abstraction''.
+
