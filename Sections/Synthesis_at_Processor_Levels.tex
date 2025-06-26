@@ -1,1 +1,75 @@
-\section{Synthesis at Processor Levels}
+\section{Abstraction at Processor Levels}
+\subsection{Behavior Modelling at Processor Levels}
+In behavioral modelling at processor level, the computational units--- processors are defined and subsequently designed. According to~\cite{Gajski.2009}, these processing elements (PEs) can compute either specific functions (dedicated/custom components) for specific usage or generic computation (general/standard PE) of any functions.\\
+Instead of classical approach of defining functionality with mathematical expressions and formulas, modern days graphical user interfaces have provided capability to replace them with flow chart specifications. One of such approach is Finite State Machine (FSM) modelling --- a set of states and trnsitions. The transitions take place from state to state upon meeting the required value of some input variables~\cite{Gajski.2009}. The FSM also generates values for output varialbes during each transition of states. It is also noteworthy to mention here, as stated in~\cite{Gajski.2009} that, ``the original FSM model uses binary variables for inputs and outputs''. FSMD is an iteration of FSM with variable values extending from integer to floating point along with binary. A set of arithmetic expressions or programming statements~\cite{Gajski.2009}, executing in the background, will compute the variable values in extensive ranges during each state transition. However, the FSMD model is incapable of refresenting expressions of any prgramming language control statements. For that, there is also another model know as Control-Data Flow Graph (CDFG). This is considered to be a FSMD with superstates that require multiple clock cycles to execute~\cite{Gajski.2009}. Besides, it is also possible to define functionalities of these PEs with algorithm implementation in some programming languages (Instruction Sets).
+\subsection{Structure Modelling at Processor Levels}
+Once the behavior of the processing units are defined, they can be translated into virtual hardware components using registers, ALUs, Demultiplexers, Adders etc. These model contains a controller and a datapath where the datapath ``consists of a set of storage elements (such as registers, register files, andmemories), a set offunctional units (such asALUs, multipliers, shifters, and other custom functional units), and a set of busses''~\cite{Gajski.2009}. Based on the behavior of the processor, the type and number of components are chosen. For the internal connections among these components, busses, a network-on-chip (NOC) or crossbars can be used. Each component may require multiple clock cycles for execution and a control logic can be used for that purpose. To ensure correct timing and sequencing of data, each component can be pipelined--- breaking complex blocks into smaller units along with the entire datapath~\cite{Gajski.2009}.\\
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/processor_structure_model.png}
+    \caption{Exemplary Structural Model of a Processor~\cite{Gajski.2009}.}
+    \label{fig:processor_structure_model}
+\end{figure}  
+According to~\cite{Gajski.2009}, a controller ``defines the state of the processor clock cycle per clock cycle and issues the control signals for the datapath accordingly''. Howerver, the structure and implementation of the controller depends on--- whether the processor, in question, is of standard type (like: Xeon, ARM, DSP), custom-designed or Intellectual Property (IP) function-contained processor for targeted platform~\cite{Gajski.2009}. Therefore, it can be said, in summary, that this structure level is mapping the behavioral descriptions, defined in the previous level, to RTL components with clock-cycles using pipeline, I/O latches or registers, and resource allocation mechanisms.
+\subsection{Synthesis at Processor Levles}
+There is a differnece in the process of synthesis among different processors--- standard, custom or custom IPs. For standard processors, engineers design each part of the processor by hand- writing HDL code (VHDL/Verilog) for each unit (ALUs, multiplexer, decoders, cache memories, pipelines), tuning performance and power consumption variables and sometimes even hand-placing logic gates in critical component blocks. On the other hand, a custom processor or a custome IP design or synthesis begins with the C code of the pre-designed algorithm which is then converted to the corresponding CDFG or FSMD model before synthesis~\cite{Gajski.2009}. After synthesis, it, then, turn outs to be a custom entity with inter-connected various components, detemined by the given behavioral model~\cite{Gajski.2009}--- known as a processor.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Processor_Synthesis.png}
+    \caption{Processor Synthesis~\cite{Gajski.2009}.}
+    \label{fig:Processor_Synthesis}
+\end{figure}  
+This virtual sketching of processor is known as high-level or register-transfer synthesis.According to~\cite{Gajski.2009}, it consists of five individual tasks, which are as follwos:
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Allocattion of components and connections:} From existing hardware library, it is possible to start assembling the virtual processor. The components are readily available building blocks (like lego) which are verified and characterized with key metrics like--- latency, area cost, power draw, delays, I/O port counts etc. For each dictated operation in the processor's behavior, a matching hardware block must have to be used. After binding (assigning operations to specific components) and scheduling (clock cycles of each operation) are specified, it is possilbe to move to next process--- putting connectivity among the components with wires, buses or a NoC. This helps in estimating all the delays~\cite{Gajski.2009} relating to the connectivity floorplan.
+    \item \textbf{Cycle-accurate scheduling:} Any operation that is supposed to be performed by the processor, defined in the behavioral model-- must be scheduled into clock cycle~\cite{Gajski.2009}. Depending on the datapath, reading and writing variable values from and to the storage components may require multiple cycles. A generalized workflow can be as follows:  
+    [read operands from memory] → [execute operation] → [store result in memory]
+    A generalized scenario can be considered where we need to compute the multiplication of two operands and store it in `d'. The cycles of the overall process can be visualized as follows:
+    Cycle 1: Fetch b, c\\
+    Cycle 2: Execute a = b + c\\
+    Cycle 3: Store a, Fetch e\\
+    Cycle 4: Execute d = a * e (starts)\\
+    Cycle 5-6: Multiplier pipeline continues\\
+    Cycle 7: Store d\\
+    It is evident that each operation, like the normal one above, ``by itself may take several clock cycles in a pipelined datapath''~\cite{Gajski.2009}.
+    \item  \textbf{Binding of variables, operations and transfers:} Each variable must be contained in a storage unit. Then also, any outlined operation in the behavioral model must be assigned to corresponding functional units (hardware blocks). However, if there exist several units serving that capability, ``the binding algorithm must optimize the selection''~\cite{Gajski.2009}. 
+    \item  \textbf{Synthesis of controller:} The controller is a hardware block that sends control signals to instruct the processor, for example-- when to fetch data, when to execute and operation, where to store results etc. There can be different types of controller can be used for processor synthesis--- for example, programmable controller, ROM based for fixed funtional IPs, or even pure logic-based controller.     
+    \item \textbf{Model refinement:} It is the ultimate structural output as working processor in the virtual enviornment. As the synthesis gradually is moving towards implementation in hardware level, there are more and more details of the processor are added:
+    \begin{enumerate}
+        \item `What each operation is',
+        \item `Where the data are stored',
+        \item `Which functiona unit (hardware block) is responsible for which operation'
+        \item `How data moves through busses or any connection'
+    \end{enumerate}
+    There is always room to follow different styles to generate a new processor. According to~\cite{Gajski.2009}, the execution of the statement a = b + c can follow steps like follows:  
+    \begin{enumerate}
+        \item \textbf{No Binding – Behavioral Level}\\
+        a = b + c;\\
+        It is only behavioral: only what should happen, not how. 
+        \item \textbf{Storage Binding}\\
+        RF(1) = RF(3) + RF(4);\\
+        Binding variables to physical registers:
+            \begin{itemize}
+                \item a is stored in register file location RF(1)
+                \item b and c are in RF(3) and RF(4)
+            \end{itemize}
+        \item \textbf{Storage + Functional Unit Binding}\\
+        RF(1) = ALU1(+, RF(3), RF(4));
+            \begin{itemize}
+                \item The operation + is performed by ALU1
+                \item Input operands are from RF(3), RF(4)
+                \item Output goes to RF(1)
+            \end{itemize}
+        \item \textbf{Storage + Functional + Connectivity Binding}\\
+        Bus1 = RF(3);\\
+        Bus2 = RF(4);\\
+        Bus3 = ALU1(+, Bus1, Bus2);\\
+        RF(1) = Bus3;
+            \begin{itemize}
+                \item Each data transfer is shown: from register → bus → ALU → bus → register
+            \end{itemize}
+    \end{enumerate}
+\end{enumerate}  
+
+
+

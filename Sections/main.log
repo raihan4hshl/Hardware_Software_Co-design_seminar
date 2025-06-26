@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.25)  21 JUN 2025 14:00
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.25)  26 JUN 2025 23:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -537,32 +537,60 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 38.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 53.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 6.0pt on input line 53.
- (./Introduction.tex
+(./Introduction.tex
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 1.
 ) (./Y_Chart_Approach.tex
+
 File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Screenshot 2025-06-19 202509.png Graphic file (type bmp)
 <C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Screenshot 2025-06-19 202509.png>
-
-
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 [1
 
 
-]) (./Synthesis_at_Processor_Levels.tex) (./SoftwareSynthesisProcess.tex) (./Hardware_Software_Co-design.tex) (./Optimization_Techniques.tex) (./Tools_and_Framework.tex) (./Challenges_in_Software_Synthesis.tex) (./Case_Studies_and_Applications.tex) (./Future_Trends.tex)
+]) (./Synthesis_at_Processor_Levels.tex
+
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/processor_structure_model.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/processor_structure_model.png>
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Processor_Synthesis.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Processor_Synthesis.png>
+
+
+[2]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[3]) (./SoftwareSynthesisProcess.tex
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Software_Synthesis.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Software_Synthesis.png>
+) (./Targeted_Languages.tex) (./rtos_importance.tex
+
+) (./synthesis_flow.tex
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Software_Synthesis_Flow.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/Software_Synthesis_Flow.png>
+) (./tlm.tex
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/TLM.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/TLM.png>
+) (./target_arch.tex
+
+[4]
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/target_arch.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/target_arch.png>
+) (./Code_generate.tex
+File: C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/code.png Graphic file (type bmp)
+<C:/Users/exone/Documents/GitHub/Hardware_Software_Co-design_seminar/Sections/Diagrams/code.png>
+) (./Summary.tex)
 
 (./main.bbl)
 
@@ -578,7 +606,7 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[2] (./main.aux)
+[5] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -589,12 +617,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 8147 strings out of 470231
- 184312 string characters out of 5487678
- 633092 words of memory out of 5000000
- 34631 multiletter control sequences out of 15000+600000
- 632122 words of font info for 122 fonts, out of 8000000 for 9000
+ 8204 strings out of 470231
+ 189999 string characters out of 5487678
+ 634092 words of memory out of 5000000
+ 34688 multiletter control sequences out of 15000+600000
+ 629004 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,8n,96p,1813b,340s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,96p,1813b,400s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (2 pages).
+Output written on main.pdf (5 pages).

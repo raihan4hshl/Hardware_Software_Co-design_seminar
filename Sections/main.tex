@@ -50,25 +50,35 @@
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+Optimized low-level software code, synthesized from high-level behavioral specifications,
+ensures efficient and accurate program execution on hardware by offsetting resource
+limitations. As hardware and software are parallelly developed to fulfill system-level goals,
+software synthesis can pave the path for early planning of the significant challenge in embedded
+field- the hardware constraint; thus, can improve upon performance, cost-efficiency and
+flexibility across both domains. C/C++/SystemC are the most common languages used for code
+automation. The targeted back-end hardware like MCUs, DSPs, FPGAs and AISPs are
+significant beneficials of the synthesis procedures. Wherever design parameters like power
+consumption, real-time deadlines, memory allocation are of critical concerns, hardware
+software seamless alignment is highly anticipated.
+The goal of the seminar paper is to explore some of the core aspects of software synthesis like
+scheduling tasks to processors. It will provide a comprehensive understanding of efficient
+mapping of software onto embedded processors while adhering to system-level critical
+constraints including timing, resource limitations and power consumption.
 \end{abstract}
 
-\begin{IEEEkeywords}
-component, formatting, style, styling, insert.
-\end{IEEEkeywords}
+
 
 \input{Introduction}
 \input{Y_Chart_Approach}
 \input{Synthesis_at_Processor_Levels}
 \input{SoftwareSynthesisProcess}
-\input{Hardware_Software_Co-design}
-\input{Optimization_Techniques}
-\input{Tools_and_Framework}
-\input{Challenges_in_Software_Synthesis}
-\input{Case_Studies_and_Applications}
-\input{Future_Trends}
+\input{Targeted_Languages}
+\input{rtos_importance}
+\input{synthesis_flow}
+\input{tlm}
+\input{target_arch}
+\input{Code_generate}
+\input{Summary}
 
 \newpage
 \bibliographystyle{IEEEtran}  % Change to apa, plain, acm, etc. if required
